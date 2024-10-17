@@ -2,16 +2,6 @@
 // @name         Main Script
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  Call a function from another repository
-// @author       Your Name
-// @match        *://*/*
-// @grant        none
-// ==/UserScript==
-
-// ==UserScript==
-// @name         Main Script
-// @namespace    http://tampermonkey.net/
-// @version      1.0
 // @description  Fetch and call monitorCall function from another repository
 // @author       Your Name
 // @match        *://*/*
