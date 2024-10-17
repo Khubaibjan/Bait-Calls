@@ -41,7 +41,7 @@
 
                 }
                 if(con!='1'){
-                    document.getElementsByClassName('title')[0].innerHTML =target1;
+                    document.getElementsByClassName('title')[0].innerHTML =HiredSupport;
                     clearInterval(interval);
                 }
 
