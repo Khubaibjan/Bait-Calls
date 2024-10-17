@@ -14,7 +14,7 @@
         let target = document.getElementById('form1')[0].value;
         let baitId= Array.from(String(target), Number);
             if(baitId[0]=6){
-                document.getElementsByClassName('title')[0].innerHTML= "Warning! Listen to this call carefullybbbbbbbb.";
+                document.getElementsByClassName('title')[0].innerHTML= "Warning! .";
                 document.getElementsByClassName('title')[0].style.color="#ffeb38";
                 document.getElementsByClassName('title')[0].style.fontSize = "30px";
                 document.getElementsByClassName('title')[0].style.fontFamily = "Comic Sans MS";
