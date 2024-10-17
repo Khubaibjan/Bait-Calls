@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Bait Call 19.0
-// @namespace    http://tampermonkey.net/
+// @namespace    
 // @version      0.2
 // @description  try to take over the world!
 // @author       Khubaib
