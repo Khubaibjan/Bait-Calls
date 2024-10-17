@@ -8,10 +8,20 @@
 // @grant        none
 // ==/UserScript==
 
+// ==UserScript==
+// @name         Main Script
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Fetch and call monitorCall function from another repository
+// @author       Your Name
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
 (function() {
     'use strict';
 
-    // URL of the JavaScript file in Repository A
+    // URL of the JavaScript file containing monitorCall function
     const scriptUrl = 'https://raw.githubusercontent.com/Khubaibjan/Bait-Call-Funtion/main/IDs
 ';
 
@@ -22,7 +32,8 @@
         })
         .then(code => {
             eval(code); // Evaluate the fetched script
-            greet('World'); // Call the function from Repository A
+            monitorCall(); // Call the monitorCall function
         })
         .catch(error => console.error('Error loading script:', error));
 })();
+
