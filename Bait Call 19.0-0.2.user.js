@@ -46,7 +46,7 @@
 
                 }
                 if(con!='1'){
-                    document.getElementsByClassName('title')[0].innerHTML =Humanatic;
+                    document.getElementsByClassName('title')[0].innerHTML =target1;
                     clearInterval(interval);
                 }
 
