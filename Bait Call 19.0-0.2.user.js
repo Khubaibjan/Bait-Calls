@@ -53,4 +53,6 @@
             }
         }
     }, 1000);
+
+    console.log("Script execution completed."); // Log message indicating the script has finished executing
 })();
