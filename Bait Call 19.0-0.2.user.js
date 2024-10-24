@@ -62,7 +62,7 @@
 
                 }
                 if(con!='1'){
-                    document.getElementsByClassName('title')[0].innerHTML =target1;
+                    document.getElementsByClassName('title')[0].innerHTML ="Hello";
                     clearInterval(interval);
                 }
 
