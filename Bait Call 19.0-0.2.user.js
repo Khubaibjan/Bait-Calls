@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bait Call IDN
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  try to take over the world!
 // @author       Khubaib
 // @match       https://www.humanatic.com/x19/review.cfm
@@ -12,7 +12,7 @@
     'use strict';
     console.log("Script loaded successfully."); // Log message indicating the script has loaded
 
-    const interval = setInterval(function() {
+    const checkTarget = () => {
         if (document.title === 'Review') {
             let target = document.getElementById('form1')[0].value;
             let baitId = Array.from(String(target), Number);
@@ -24,35 +24,42 @@
                 document.getElementsByClassName('title')[0].style.color = "#ffeb38";
                 document.getElementsByClassName('title')[0].style.fontSize = "30px";
                 document.getElementsByClassName('title')[0].style.fontFamily = "Comic Sans MS";
-                clearInterval(interval);
             } else {
                 let con = 0;
-                let target1 = document.getElementById('form1')[0].value;
                 const baitIds = [
                     // Old ids
-                    6000350258627, 6000350918207, 6000351009355, 6000350188337, 6000350481983,
+                    6000350258627
                 ];
                 
                 for (const check of baitIds) {
-                    console.log(`Checking bait ID: ${check}`); // Log the bait ID being checked
-                    if (check == target1) {
+                    if (check == target) {
                         con = 1;
-                        console.log(`Matched bait ID: ${check} with target: ${target1}`); // Log the match
                         document.getElementsByClassName('title')[0].innerHTML = "Warning! Listen to this call carefully";
                         // Apply same CSS styles when check matches target
                         document.getElementsByClassName('title')[0].style.color = "#ffeb38";
                         document.getElementsByClassName('title')[0].style.fontSize = "30px";
                         document.getElementsByClassName('title')[0].style.fontFamily = "Comic Sans MS";
-                        clearInterval(interval);
+                        break; // Break out of the loop once a match is found
                     }
                 }
+
                 if (con !== '1') {
-                    document.getElementsByClassName('title')[0].innerHTML = target1;
-                    clearInterval(interval);
+                    document.getElementsByClassName('title')[0].innerHTML = target;
                 }
             }
         }
-    }, 1000);
+    };
+
+    // Create a MutationObserver to monitor changes in the form
+    const observer = new MutationObserver(() => {
+        checkTarget(); // Call the function when changes are detected
+    });
+
+    // Observe changes to the entire body
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Call the function initially to check the target on script load
+    checkTarget();
 
     console.log("Script execution completed."); // Log message indicating the script has finished executing
 })();
