@@ -15,9 +15,6 @@
         let baitId= Array.from(String(target), Number);
             if(baitId[12]!=6){
                 document.getElementsByClassName('title')[0].innerHTML= "Warning! Listen to this call carefully";
-                document.getElementsByClassName('title')[0].style.color="#ffeb38";
-                document.getElementsByClassName('title')[0].style.fontSize = "30px";
-                document.getElementsByClassName('title')[0].style.fontFamily = "Comic Sans MS";
                 clearInterval(interval);
 
             }
@@ -63,6 +60,10 @@
                 }
                 if(con!='1'){
                     document.getElementsByClassName('title')[0].innerHTML =target1;
+                document.getElementsByClassName('title')[0].innerHTML= "Warning! Listen to this call carefully";
+                document.getElementsByClassName('title')[0].style.color="#ffeb38";
+                document.getElementsByClassName('title')[0].style.fontSize = "30px";
+                document.getElementsByClassName('title')[0].style.fontFamily = "Comic Sans MS";
                     clearInterval(interval);
                 }
 
